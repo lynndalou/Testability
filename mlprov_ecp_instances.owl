@@ -1,0 +1,780 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/mlprov"
+         xmlns="http://www.semanticweb.org/mlprov#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/mlprov">
+  <owl:imports rdf:resource="http://www.w3.org/ns/prov-o-20130430"/>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#describes">
+  <rdfs:domain rdf:resource="#data_metadata"/>
+  <rdfs:domain rdf:resource="#label"/>
+  <rdfs:range rdf:resource="#data_instance"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#fulfills">
+  <rdfs:domain rdf:resource="#model"/>
+  <rdfs:range rdf:resource="#requirement_specification"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttribute">
+  <rdfs:domain rdf:resource="#data_instance"/>
+  <rdfs:domain rdf:resource="#dataset"/>
+  <rdfs:domain rdf:resource="#execution"/>
+  <rdfs:domain rdf:resource="#model"/>
+  <rdfs:range rdf:resource="#data_authenticity"/>
+  <rdfs:range rdf:resource="#data_split"/>
+  <rdfs:range rdf:resource="#dataset_class_split"/>
+  <rdfs:range rdf:resource="#deployment_mode"/>
+  <rdfs:range rdf:resource="#model_architecture"/>
+  <rdfs:range rdf:resource="#model_size"/>
+  <rdfs:range rdf:resource="#performance_metric"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasType">
+  <rdfs:domain rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#data_type"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#description">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Method_of_collection"/>
+
+<owl:Class rdf:about="#annotator">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#constraint">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#container">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#customer_requirement_artifact">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_annotation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_authenticity"/>
+
+<owl:Class rdf:about="#data_change">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_collection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_collector">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_instance">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_metadata">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_preprocessing">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_source">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_split"/>
+
+<owl:Class rdf:about="#data_type"/>
+
+<owl:Class rdf:about="#dataset">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#dataset_class_split"/>
+
+<owl:Class rdf:about="#deployment_mode"/>
+
+<owl:Class rdf:about="#developer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#environment_dependency">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#exclusion_criteria">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#execution">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#execution_statistic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#feature_selection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#gradient">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#hyperparameter">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#inclusion_criteria">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#label">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#license">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#model">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#model_architecture"/>
+
+<owl:Class rdf:about="#model_retraining">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#model_size"/>
+
+<owl:Class rdf:about="#operation_location">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#optimizer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#parameter">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#performance_metric">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#pipeline">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#prediction">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#preprocessing_step">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#pretrained_model">
+  <rdfs:subClassOf rdf:resource="#model"/>
+</owl:Class>
+
+<owl:Class rdf:about="#requirement_change">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#requirement_engineer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#requirement_specification">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#requirements_engineering">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#retraining"/>
+
+<owl:Class rdf:about="#revert">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#selected_feature">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#source_code">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#test_case">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#testing">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#testing_dataset">
+  <rdfs:subClassOf rdf:resource="#dataset"/>
+</owl:Class>
+
+<owl:Class rdf:about="#training">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#training_dataset">
+  <rdfs:subClassOf rdf:resource="#dataset"/>
+</owl:Class>
+
+<owl:Class rdf:about="#validation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#validation_dataset">
+  <rdfs:subClassOf rdf:resource="#dataset"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o-20120312"/>
+
+<owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o#"/>
+
+<owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o"/>
+
+<owl:NamedIndividual rdf:about="#req1">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'person' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req2">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'bicycle' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req3">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'car' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req4">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'motorcycle' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req5">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'airplane' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req6">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'bus' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req7">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'train' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req8">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'truck' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req9">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'boat' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req10">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'traffic light' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req11">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'fire hydrant' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req12">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'stop sign' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req13">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'parking meter' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req14">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'bench' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req15">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'bird' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req16">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'cat' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req17">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'dog' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req18">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'horse' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req19">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'sheep' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req20">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'cow' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req21">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'elephant' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req22">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'bear' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req23">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'zebra' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req24">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'giraffe' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req25">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'backpack' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req26">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'umbrella' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req27">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'handbag' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req28">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'tie' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req29">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'suitcase' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req30">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'frisbee' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req31">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'skis' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req32">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'snowboard' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req33">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'sports ball' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req34">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'kite' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req35">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'baseball bat' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req36">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'baseball glove' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req37">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'skateboard' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req38">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'surfboard' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req39">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'tennis racket' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req40">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'bottle' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req41">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'wine glass' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req42">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'cup' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req43">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'fork' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req44">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'knife' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req45">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'spoon' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req46">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'bowl' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req47">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'banana' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req48">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'apple' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req49">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'sandwich' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req50">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'orange' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req51">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'broccoli' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req52">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'carrot' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req53">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'hot dog' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req54">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'pizza' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req55">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'donut' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req56">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'cake' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req57">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'chair' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req58">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'couch' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req59">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'potted plant' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req60">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'bed' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req61">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'dining table' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req62">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'toilet' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req63">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'tv' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req64">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'laptop' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req65">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'mouse' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req66">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'remote' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req67">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'keyboard' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req68">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'cell phone' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req69">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'microwave' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req70">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'oven' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req71">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'toaster' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req72">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'sink' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req73">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'refrigerator' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req74">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'book' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req75">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'clock' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req76">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'vase' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req77">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'scissors' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req78">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'teddy bear' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req79">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'hair drier' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#req80">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall detect instances of the 'toothbrush' class within images.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Training Dataset">
+  <rdf:type rdf:resource="#training_dataset"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://images.cocodataset.org/zips/train2017.zip</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Testing Dataset">
+  <rdf:type rdf:resource="#testing_dataset"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://images.cocodataset.org/zips/test2017.zip</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#YOLOv8x mAP">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">53.9</description>
+</owl:NamedIndividual>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#atLocation">
+  <rdfs:domain rdf:resource="#execution"/>
+  <rdfs:range rdf:resource="#operation_location"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#hadMember">
+  <rdfs:domain rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#data_instance"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#hadPrimarySource">
+  <rdfs:domain rdf:resource="#data_instance"/>
+  <rdfs:range rdf:resource="#data_source"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#influenced">
+  <rdfs:domain rdf:resource="#environment_dependency"/>
+  <rdfs:domain rdf:resource="#optimizer"/>
+  <rdfs:domain rdf:resource="#preprocessing_step"/>
+  <rdfs:domain rdf:resource="#training"/>
+  <rdfs:range rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#execution"/>
+  <rdfs:range rdf:resource="#model"/>
+  <rdfs:range rdf:resource="#validation"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#used">
+  <rdfs:domain rdf:resource="#data_collection"/>
+  <rdfs:domain rdf:resource="#data_preprocessing"/>
+  <rdfs:domain rdf:resource="#execution"/>
+  <rdfs:range rdf:resource="#Method_of_collection"/>
+  <rdfs:range rdf:resource="#container"/>
+  <rdfs:range rdf:resource="#exclusion_criteria"/>
+  <rdfs:range rdf:resource="#inclusion_criteria"/>
+  <rdfs:range rdf:resource="#license"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
+  <rdfs:domain rdf:resource="#model"/>
+  <rdfs:domain rdf:resource="#requirement_specification"/>
+  <rdfs:range rdf:resource="#constraint"/>
+  <rdfs:range rdf:resource="#customer_requirement_artifact"/>
+  <rdfs:range rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#hyperparameter"/>
+  <rdfs:range rdf:resource="#pretrained_model"/>
+  <rdfs:range rdf:resource="#requirements_engineering"/>
+  <rdfs:range rdf:resource="#source_code"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
+  <rdfs:domain rdf:resource="#data_instance"/>
+  <rdfs:domain rdf:resource="#dataset"/>
+  <rdfs:domain rdf:resource="#execution_statistic"/>
+  <rdfs:domain rdf:resource="#gradient"/>
+  <rdfs:domain rdf:resource="#label"/>
+  <rdfs:domain rdf:resource="#model"/>
+  <rdfs:domain rdf:resource="#performance_metric"/>
+  <rdfs:domain rdf:resource="#prediction"/>
+  <rdfs:domain rdf:resource="#preprocessing_step"/>
+  <rdfs:domain rdf:resource="#requirement_specification"/>
+  <rdfs:domain rdf:resource="#selected_feature"/>
+  <rdfs:domain rdf:resource="#test_case"/>
+  <rdfs:range rdf:resource="#annotator"/>
+  <rdfs:range rdf:resource="#data_annotation"/>
+  <rdfs:range rdf:resource="#data_collection"/>
+  <rdfs:range rdf:resource="#data_collector"/>
+  <rdfs:range rdf:resource="#data_preprocessing"/>
+  <rdfs:range rdf:resource="#developer"/>
+  <rdfs:range rdf:resource="#execution"/>
+  <rdfs:range rdf:resource="#feature_selection"/>
+  <rdfs:range rdf:resource="#model"/>
+  <rdfs:range rdf:resource="#pipeline"/>
+  <rdfs:range rdf:resource="#requirement_engineer"/>
+  <rdfs:range rdf:resource="#test_case"/>
+  <rdfs:range rdf:resource="#testing"/>
+  <rdfs:range rdf:resource="#training"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasInfluencedBy">
+  <rdfs:domain rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#exclusion_criteria"/>
+  <rdfs:range rdf:resource="#feature_selection"/>
+  <rdfs:range rdf:resource="#inclusion_criteria"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasRevisionOf">
+  <rdfs:domain rdf:resource="#data_change"/>
+  <rdfs:domain rdf:resource="#model_retraining"/>
+  <rdfs:domain rdf:resource="#requirement_change"/>
+  <rdfs:domain rdf:resource="#revert"/>
+  <rdfs:range rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#model"/>
+  <rdfs:range rdf:resource="#requirement_specification"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
+  <rdfs:domain rdf:resource="#data_instance"/>
+  <rdfs:domain rdf:resource="#label"/>
+  <rdfs:domain rdf:resource="#requirement_specification"/>
+</rdf:Description>
+
+
+</rdf:RDF>
