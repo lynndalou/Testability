@@ -11,8 +11,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
 
 # folders
-input_folder = "enase26_test/test/images"
-input_labels = "enase26_test/test/labels"
+input_folder = "path/to/data/test/images"
+input_labels = "path/to/data/test/labels"
 
 output_folder = "adversarial_test_data/test/images"
 output_labels = "adversarial_test_data/test/labels"
@@ -101,7 +101,7 @@ adversarial_test_data.description = ["github"]
 model1 = model("Test_Model")
 model1.description = ["runs/detect/train/"]
 
-testing_dataset = "enase26_test/"
+testing_dataset = "path/to/data/"
 adversarial_dataset = "adversarial_test_data/"
 
 metrics1 = yolo_model.val(
