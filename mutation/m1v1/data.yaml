@@ -1,0 +1,12 @@
+names:
+- pie
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: icsme26_m1v1
+  url: https://universe.roboflow.com/emergencyvehicles/icsme26_m1v1/dataset/2
+  version: 2
+  workspace: emergencyvehicles
+test: ../test/images
+train: ../train/images
+val: ../valid/images
