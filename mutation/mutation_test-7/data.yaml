@@ -1,0 +1,13 @@
+names:
+- cake
+- pie
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: mutation_test
+  url: https://universe.roboflow.com/emergencyvehicles/mutation_test/dataset/7
+  version: 7
+  workspace: emergencyvehicles
+test: ../test/images
+train: ../train/images
+val: ../valid/images
