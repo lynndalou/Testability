@@ -1,0 +1,1096 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/mlprov"
+         xmlns="http://www.semanticweb.org/mlprov#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/mlprov">
+  <owl:imports rdf:resource="http://www.w3.org/ns/prov-o-20130430"/>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#describes">
+  <rdfs:domain rdf:resource="#data_metadata"/>
+  <rdfs:domain rdf:resource="#label"/>
+  <rdfs:range rdf:resource="#data_instance"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#fulfills">
+  <rdfs:domain rdf:resource="#model"/>
+  <rdfs:range rdf:resource="#requirement_specification"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAttribute">
+  <rdfs:domain rdf:resource="#data_instance"/>
+  <rdfs:domain rdf:resource="#dataset"/>
+  <rdfs:domain rdf:resource="#execution"/>
+  <rdfs:domain rdf:resource="#model"/>
+  <rdfs:range rdf:resource="#data_authenticity"/>
+  <rdfs:range rdf:resource="#data_split"/>
+  <rdfs:range rdf:resource="#dataset_class_split"/>
+  <rdfs:range rdf:resource="#deployment_mode"/>
+  <rdfs:range rdf:resource="#model_architecture"/>
+  <rdfs:range rdf:resource="#model_size"/>
+  <rdfs:range rdf:resource="#performance_metric"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasType">
+  <rdfs:domain rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#data_type"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#description">
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Method_of_collection"/>
+
+<owl:Class rdf:about="#annotator">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#constraint">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#container">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#customer_requirement_artifact">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_annotation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_authenticity"/>
+
+<owl:Class rdf:about="#data_change">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_collection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_collector">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_instance">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_metadata">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_preprocessing">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_source">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#data_split"/>
+
+<owl:Class rdf:about="#data_type"/>
+
+<owl:Class rdf:about="#dataset">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#dataset_class_split"/>
+
+<owl:Class rdf:about="#deployment_mode"/>
+
+<owl:Class rdf:about="#developer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#environment_dependency">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#exclusion_criteria">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#execution">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#execution_statistic">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#feature_selection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#gradient">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#hyperparameter">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#inclusion_criteria">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#label">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#license">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#model">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#model_architecture"/>
+
+<owl:Class rdf:about="#model_retraining">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#model_size"/>
+
+<owl:Class rdf:about="#operation_location">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#optimizer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#parameter">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#performance_metric">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#pipeline">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#prediction">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#preprocessing_step">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#pretrained_model">
+  <rdfs:subClassOf rdf:resource="#model"/>
+</owl:Class>
+
+<owl:Class rdf:about="#requirement_change">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#requirement_engineer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#requirement_specification">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#requirements_engineering">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#retraining"/>
+
+<owl:Class rdf:about="#revert">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#selected_feature">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#source_code">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#test_case">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#testing">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#testing_dataset">
+  <rdfs:subClassOf rdf:resource="#dataset"/>
+</owl:Class>
+
+<owl:Class rdf:about="#training">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#training_dataset">
+  <rdfs:subClassOf rdf:resource="#dataset"/>
+</owl:Class>
+
+<owl:Class rdf:about="#validation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#validation_dataset">
+  <rdfs:subClassOf rdf:resource="#dataset"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o-20120312"/>
+
+<owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o#"/>
+
+<owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o"/>
+
+<owl:NamedIndividual rdf:about="#req1">
+  <rdf:type rdf:resource="#requirement_specification"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The model shall predict the steering angle for the car.</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Udacity_Test_Set">
+  <rdf:type rdf:resource="#testing_dataset"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://www.kaggle.com/datasets/juliuspesonen/udacity-challenge-2</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Seed_image_1">
+  <rdf:type rdf:resource="#data_instance"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/seed/image</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Seed_image_2">
+  <rdf:type rdf:resource="#data_instance"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/seed/image</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Seed_image_3">
+  <rdf:type rdf:resource="#data_instance"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/seed/image</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Seed_image_4">
+  <rdf:type rdf:resource="#data_instance"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/seed/image</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Seed_image_5">
+  <rdf:type rdf:resource="#data_instance"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/seed/image</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Label_Image_1">
+  <rdf:type rdf:resource="#label"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Label_Image_2">
+  <rdf:type rdf:resource="#label"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Label_Image_3">
+  <rdf:type rdf:resource="#label"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Label_Image_4">
+  <rdf:type rdf:resource="#label"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Label_Image_5">
+  <rdf:type rdf:resource="#label"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Averaging_Blur=3x3">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Averaging_Blur=4x4">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Averaging_Blur=5x5">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Averaging_Blur=6x6">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Gaussian_Blur=3x3">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Gaussian_Blur=4x4">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Gaussian_Blur=5x5">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Gaussian_Blur=6x6">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Median_Blur=3x3">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Median_Blur=4x4">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Median_Blur=5x5">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Median_Blur=6x6">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bilateral_Blur=3x3">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bilateral_Blur=4x4">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bilateral_Blur=5x5">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bilateral_Blur=6x6">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Brightness=10">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Brightness=20">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Brightness=30">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Brightness=40">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Brightness=50">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Brightness=60">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Brightness=70">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Brightness=80">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Brightness=90">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Brightness=100">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Contrast=1.2">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Contrast=1.4">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Contrast=1.6">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Contrast=1.8">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Contrast=2.0">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Contrast=2.2">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Contrast=2.4">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Contrast=2.6">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Contrast=2.8">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Contrast=3.0">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotation=3">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotation=6">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotation=9">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotation=12">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotation=15">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotation=18">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotation=21">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotation=24">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotation=27">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotation=30">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scale=1.5">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scale=2.0">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scale=2.5">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scale=3.0">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scale=3.5">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scale=4.0">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scale=4.5">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scale=5.0">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scale=5.5">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Scale=6.0">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Horizontal_Shear=0.1">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Horizontal_Shear=0.2">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Horizontal_Shear=0.3">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Horizontal_Shear=0.4">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Horizontal_Shear=0.5">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Horizontal_Shear=0.6">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Horizontal_Shear=0.7">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Horizontal_Shear=0.8">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Horizontal_Shear=0.9">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Horizontal_Shear=1.0">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Translation=(10,10)">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Translation=(20,20)">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Translation=(30,30)">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Translation=(40,40)">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Translation=(50,50)">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Translation=(60,60)">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Translation=(70,70)">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Translation=(80,80)">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Translation=(90,90)">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Translation=(100,100)">
+  <rdf:type rdf:resource="#preprocessing_step"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Image_1">
+  <rdf:type rdf:resource="#data_instance"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/image</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Image_2">
+  <rdf:type rdf:resource="#data_instance"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/image</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Image_3">
+  <rdf:type rdf:resource="#data_instance"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/image</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Image_4">
+  <rdf:type rdf:resource="#data_instance"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/image</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Image_5">
+  <rdf:type rdf:resource="#data_instance"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/image</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Label_1">
+  <rdf:type rdf:resource="#label"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Label_2">
+  <rdf:type rdf:resource="#label"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Label_3">
+  <rdf:type rdf:resource="#label"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Label_4">
+  <rdf:type rdf:resource="#label"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Label_5">
+  <rdf:type rdf:resource="#label"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">angle</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Transformed_Test_Suite">
+  <rdf:type rdf:resource="#testing_dataset"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">path/to/data</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Autumn">
+  <rdf:type rdf:resource="#model"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/udacity/self-drivingcar/tree/master/steering-models/community-models/autumn</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Chauffeur">
+  <rdf:type rdf:resource="#model"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/udacity/self-drivingcar/tree/master/steering-models/community-models/chauffeur</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rambo">
+  <rdf:type rdf:resource="#model"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://github.com/udacity/self-drivingcar/tree/master/steering-models/community-models/rambo</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Threshold=0.1">
+  <rdf:type rdf:resource="#constraint"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Threshold=0.2">
+  <rdf:type rdf:resource="#constraint"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Threshold=0.3">
+  <rdf:type rdf:resource="#constraint"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group2_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">119</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group2_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">102</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group2_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">69</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group3_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">107</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group3_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">89</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group3_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">53</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group4_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">100</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group4_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">45</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group4_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">13</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group5_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">86</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group5_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">29</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group5_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group6_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">102</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group6_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">65</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group6_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group7_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">120</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group7_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">86</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group7_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group8_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">114</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group8_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">95</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group8_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">55</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group9_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">109</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group9_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">95</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group9_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">75</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group10_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">96</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group10_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group10_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group11_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">66</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group11_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">39</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group11_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group12_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">91</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group12_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group12_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group13_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">95</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group13_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group13_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group14_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">102</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group14_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">85</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group14_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">36</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group15_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">44</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group15_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group15_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group16_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">121</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group16_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">118</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group16_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">85</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group17_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">121</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group17_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">110</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group17_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">78</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group18_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group18_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">47</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group18_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group19_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">55</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group19_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">52</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group19_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">34</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group20_threshold1">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group20_threshold2">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23</description>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Inconsistency_group20_threshold3">
+  <rdf:type rdf:resource="#performance_metric"/>
+  <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18</description>
+</owl:NamedIndividual>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#atLocation">
+  <rdfs:domain rdf:resource="#execution"/>
+  <rdfs:range rdf:resource="#operation_location"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#hadMember">
+  <rdfs:domain rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#data_instance"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#hadPrimarySource">
+  <rdfs:domain rdf:resource="#data_instance"/>
+  <rdfs:range rdf:resource="#data_source"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#influenced">
+  <rdfs:domain rdf:resource="#environment_dependency"/>
+  <rdfs:domain rdf:resource="#optimizer"/>
+  <rdfs:domain rdf:resource="#preprocessing_step"/>
+  <rdfs:domain rdf:resource="#training"/>
+  <rdfs:range rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#execution"/>
+  <rdfs:range rdf:resource="#model"/>
+  <rdfs:range rdf:resource="#validation"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#used">
+  <rdfs:domain rdf:resource="#data_collection"/>
+  <rdfs:domain rdf:resource="#data_preprocessing"/>
+  <rdfs:domain rdf:resource="#execution"/>
+  <rdfs:range rdf:resource="#Method_of_collection"/>
+  <rdfs:range rdf:resource="#container"/>
+  <rdfs:range rdf:resource="#exclusion_criteria"/>
+  <rdfs:range rdf:resource="#inclusion_criteria"/>
+  <rdfs:range rdf:resource="#license"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
+  <rdfs:domain rdf:resource="#model"/>
+  <rdfs:domain rdf:resource="#requirement_specification"/>
+  <rdfs:range rdf:resource="#constraint"/>
+  <rdfs:range rdf:resource="#customer_requirement_artifact"/>
+  <rdfs:range rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#hyperparameter"/>
+  <rdfs:range rdf:resource="#pretrained_model"/>
+  <rdfs:range rdf:resource="#requirements_engineering"/>
+  <rdfs:range rdf:resource="#source_code"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
+  <rdfs:domain rdf:resource="#data_instance"/>
+  <rdfs:domain rdf:resource="#dataset"/>
+  <rdfs:domain rdf:resource="#execution_statistic"/>
+  <rdfs:domain rdf:resource="#gradient"/>
+  <rdfs:domain rdf:resource="#label"/>
+  <rdfs:domain rdf:resource="#model"/>
+  <rdfs:domain rdf:resource="#performance_metric"/>
+  <rdfs:domain rdf:resource="#prediction"/>
+  <rdfs:domain rdf:resource="#preprocessing_step"/>
+  <rdfs:domain rdf:resource="#requirement_specification"/>
+  <rdfs:domain rdf:resource="#selected_feature"/>
+  <rdfs:domain rdf:resource="#test_case"/>
+  <rdfs:range rdf:resource="#annotator"/>
+  <rdfs:range rdf:resource="#data_annotation"/>
+  <rdfs:range rdf:resource="#data_collection"/>
+  <rdfs:range rdf:resource="#data_collector"/>
+  <rdfs:range rdf:resource="#data_preprocessing"/>
+  <rdfs:range rdf:resource="#developer"/>
+  <rdfs:range rdf:resource="#execution"/>
+  <rdfs:range rdf:resource="#feature_selection"/>
+  <rdfs:range rdf:resource="#model"/>
+  <rdfs:range rdf:resource="#pipeline"/>
+  <rdfs:range rdf:resource="#requirement_engineer"/>
+  <rdfs:range rdf:resource="#test_case"/>
+  <rdfs:range rdf:resource="#testing"/>
+  <rdfs:range rdf:resource="#training"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasInfluencedBy">
+  <rdfs:domain rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#exclusion_criteria"/>
+  <rdfs:range rdf:resource="#feature_selection"/>
+  <rdfs:range rdf:resource="#inclusion_criteria"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#wasRevisionOf">
+  <rdfs:domain rdf:resource="#data_change"/>
+  <rdfs:domain rdf:resource="#model_retraining"/>
+  <rdfs:domain rdf:resource="#requirement_change"/>
+  <rdfs:domain rdf:resource="#revert"/>
+  <rdfs:range rdf:resource="#dataset"/>
+  <rdfs:range rdf:resource="#model"/>
+  <rdfs:range rdf:resource="#requirement_specification"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
+  <rdfs:domain rdf:resource="#data_instance"/>
+  <rdfs:domain rdf:resource="#label"/>
+  <rdfs:domain rdf:resource="#requirement_specification"/>
+</rdf:Description>
+
+
+</rdf:RDF>
